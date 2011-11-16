@@ -23,4 +23,4 @@ signature do:
     
     nginx_get_src 1.1.8
     
-Note that if the signature verification **fails** the script exits with 1    
+Note that if the signature verification **fails** the script exits with 1.
