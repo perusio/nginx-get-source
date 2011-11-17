@@ -14,6 +14,18 @@ You must **always inspect** the result of the signature verification
 
 ## Installation and Usage
 
+The Nginx tarball is stored and extracted in a directory defined by
+the value of the `NGINX_PKG_SRC_DIR` variable. The default value is 
+`$HOME/C/nginx`. Set it to reflect your setup.
+
+The script creates a tarball that follows
+[Debian](http://www.debian.org) naming scheme for upstreams, i.e.,
+`nginx_<versions>.orig.tar.gz`. For example
+`nginx_1.1.8.orig.tar.gz`. If you prefer othwerwise alter the
+`NGINX_PKG_SRC_FILENAME` variable.
+
+The tarball is extracted as `nginx-<version>`. Example `nginx-1.1.8`.
+
 Just put the script somewhere and invoke it like this:
     
     nginx_get_src <nginx version>

@@ -31,6 +31,13 @@
 ###  Script that downloads the nginx source, checks the signature,
 ###  renames according to debian convention and extracts the tarball
 
+## The directory where the nginx source will be stored and
+## extracted. Set this.
+NGINX_PKG_SRC_DIR=$HOME/C/nginx
+
+####################################################################
+## You don't need to touch anything below this line in principle. ##
+####################################################################
 SCRIPTNAME=${0##*/}
 
 WGET=$(which wget)
@@ -62,7 +69,6 @@ GPG=$(which gpg)
 $GPG --verify $TEMPDIR/$NGINX_SRC_SIG || exit 1
 
 ## Rename the tarball and extract it.
-NGINX_PKG_SRC_DIR=$HOME/C/nginx
 NGINX_PKG_SRC_FILENAME=$NGINX_PKG_SRC_DIR/nginx_$1.orig.tar.gz
 [ -d $NGINX_PKG_SRC_DIR ] || exit 0
 
